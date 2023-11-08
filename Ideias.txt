@@ -9,12 +9,27 @@ Além disso, ao realizar o monitoramento regular do processador, é possível to
 
 que graficos eu posso fazer?
 
-1.Gráfico de barras ou gráfico de pizza para comparar o número de pacotes físicos, CPUs físicas e CPUs lógicas.
-2.Gráfico de linha para mostrar a frequência do processador ao longo do tempo, se houver dados históricos disponíveis.
-3.Gráfico de dispersão ou gráfico de bolhas para visualizar a relação entre a frequência do processador e o uso do processador.
-4.Gráfico de radar para comparar diferentes características do processador, como microarquitetura, 5.fabricante, etc.
-Gráfico de barras horizontais para representar o uso do processador em diferentes intervalos de tempo.
+Gráfico de Linha de Uso do Processador ao Longo do Tempo:Este gráfico pode mostrar a variação do uso do processador em diferentes intervalos de tempo, capturando dados em tempo real ou ao longo de um período específico.
 
+Gráfico de Barras de Utilização de CPU por Processo:Este gráfico pode representar a utilização da CPU por processo específico, permitindo identificar os processos que consomem mais recursos de CPU em um determinado momento.
+
+Gráfico de Setores para a Utilização do Disco por Processo:Este gráfico pode ilustrar a utilização do disco por diferentes processos, destacando os processos que estão escrevendo ou lendo mais dados do disco.
+
+Gráfico de Pizza para a Distribuição da Utilização da CPU por Tipo de Processo:Este gráfico pode mostrar a porcentagem de utilização da CPU dividida em diferentes tipos de processos, como processos do sistema CBTC, processos do sistema operacional e outros processos em execução.
+
+Gráfico de Área de Uso de Memória ao Longo do Tempo:Este gráfico pode representar as variações no uso de memória ao longo do tempo, destacando qualquer aumento ou redução significativos no consumo de memória.
+------------------------------------------------------
+No que esses graficos ajudam
+
+Identificação de gargalos de desempenho: Os gráficos de uso do processador ao longo do tempo e de utilização da CPU por processo podem ajudar a identificar gargalos de desempenho, permitindo que a equipe de manutenção tome medidas corretivas para melhorar a eficiência do sistema.
+
+Otimização de recursos: Os gráficos de distribuição da utilização da CPU por tipo de processo e de uso de memória ao longo do tempo podem ajudar a otimizar o uso dos recursos do sistema, garantindo que a capacidade de processamento e a memória sejam alocadas de maneira eficiente.
+
+Monitoramento de saúde do sistema: Os gráficos podem servir como indicadores visuais da saúde do sistema, ajudando a equipe de operações a detectar possíveis problemas antes que afetem o funcionamento normal do metrô.
+
+Tomada de decisão proativa: Compreender os padrões de uso do processador e dos recursos do sistema ao longo do tempo pode ajudar os tomadores de decisão a antecipar necessidades futuras e a implementar estratégias de manutenção preventiva.
+
+Melhoria contínua do software CBTC: Os dados coletados e os insights obtidos por meio dos gráficos podem ser usados para aprimorar continuamente o software CBTC, garantindo sua estabilidade, confiabilidade e eficiência operacional.
 ------------------------------------------------------
 
 e como isso seria util para as maquinas do metro com o CBTC?
@@ -39,3 +54,22 @@ Utilização da CPU: Monitorar a utilização da CPU pelos processos Python em e
 Tempo de execução: Monitorar o tempo de execução dos scripts Python para identificar gargalos de desempenho.
 
 Utilização de disco: Monitorar a utilização do disco pelos processos Python para garantir que não ocorra sobrecarga.
+
+------------------------------------------------------
+
+Sentido dos codigos de python e kotlin
+
+ Ele mede o tempo de execução de um trecho de código específico e também exibe informações sobre a utilização da CPU e do disco para cada processo em execução no sistema.
+
+Isso pode ser relacionado ao contexto de monitoramento do desempenho de sistemas de metrô com o software CBTC, pois permite a captura de dados relevantes sobre os processos em execução no sistema operacional, incluindo informações sobre a utilização da CPU e do disco.
+
+Combinando essas informações com os dados de desempenho do processador que você está coletando com o código Java, é possível ter uma visão abrangente do desempenho do sistema, permitindo a identificação de gargalos de desempenho, problemas de utilização de recursos e outras métricas importantes para garantir a estabilidade e confiabilidade do sistema de metrô com o software CBTC.
+------------------------------------------------------
+
+User Storys
+
+Como um engenheiro de manutenção, eu quero visualizar gráficos em tempo real do uso do processador e dos recursos do sistema do metrô, para identificar rapidamente possíveis gargalos de desempenho e tomar medidas corretivas imediatas, garantindo um funcionamento suave e seguro do sistema CBTC.
+
+Como um analista de sistemas de transporte, eu quero receber relatórios automatizados sobre as tendências de uso do processador e da memória ao longo do tempo, para poder planejar proativamente a alocação de recursos e melhorar a eficiência operacional do sistema de metrô com o software CBTC.
+
+Como um desenvolvedor de software, eu quero ter acesso a gráficos detalhados que mostrem a distribuição do uso da CPU por processo, para poder identificar áreas específicas do código do software CBTC que exigem otimização e aprimoramento, visando aprimorar a estabilidade e o desempenho geral do sistema.
