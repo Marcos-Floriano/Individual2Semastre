@@ -1,7 +1,21 @@
 import time
 import psutil
+from datetime import datetime
 
-processos = psutil.process_iter()
+# Lista para armazenar dados do uso de disco
+uso_disco_data = []
+
+# Lista para armazenar dados da distribuição de CPU por tipo de processo
+distribuicao_cpu_data = []
+
+# Lista para armazenar dados do uso de memória ao longo do tempo
+uso_memoria_data = []
+
+# Tempo total de execução (em segundos)
+tempo_total = 60
+
+# Obtém a lista de processos no início
+processos_iniciais = psutil.process_iter()
 
 # Grava o tempo inicial
 inicio = time.time()
@@ -10,16 +24,33 @@ inicio = time.time()
 for i in range(10):
     print("Covil do Dev")
 
-# Grava o tempo final
+# Loop para coletar dados ao longo do tempo
+while time.time() - inicio < tempo_total:
+    # Obtém informações sobre o uso do disco
+    uso_disco = psutil.disk_usage('/')
+    uso_disco_data.append((datetime.now(), uso_disco.percent))
+
+    # Obtém informações sobre a distribuição de CPU por tipo de processo
+    distribuicao_cpu = {}
+    for processo in psutil.process_iter(['pid', 'name', 'cpu_percent']):
+        info = processo.info
+        distribuicao_cpu[info['name']] = info['cpu_percent']
+    distribuicao_cpu_data.append((datetime.now(), distribuicao_cpu))
+
+    # Obtém informações sobre o uso de memória
+    uso_memoria = psutil.virtual_memory().percent
+    uso_memoria_data.append((datetime.now(), uso_memoria))
+
+    # Aguarda 1 segundo antes de coletar novamente
+    time.sleep(1)
+
+# Imprime o tempo de execução total
 fim = time.time()
-
-# Calcula o tempo total decorrido
-tempo_total = fim - inicio
-
-print(f"Tempo de execução: {tempo_total} segundos")
+tempo_total_execucao = fim - inicio
+print(f"Tempo de execução total: {tempo_total_execucao} segundos")
 
 # Imprime a utilização da CPU de cada processo
-for processo in processos:
+for processo in processos_iniciais:
     try:
         # Obtém as informações do processo
         info = processo.as_dict(attrs=['pid', 'name', 'cpu_percent'])
