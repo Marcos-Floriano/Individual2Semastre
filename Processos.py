@@ -8,21 +8,14 @@ uso_disco_data = []
 # Lista para armazenar dados da distribuição de CPU por tipo de processo
 distribuicao_cpu_data = []
 
-# Lista para armazenar dados do uso de memória ao longo do tempo
-uso_memoria_data = []
-
 # Tempo total de execução (em segundos)
-tempo_total = 60
+tempo_total = 1
 
 # Obtém a lista de processos no início
 processos_iniciais = psutil.process_iter()
 
 # Grava o tempo inicial
 inicio = time.time()
-
-# Trecho de código a ser medido
-for i in range(10):
-    print("Covil do Dev")
 
 # Loop para coletar dados ao longo do tempo
 while time.time() - inicio < tempo_total:
@@ -44,10 +37,7 @@ while time.time() - inicio < tempo_total:
     # Aguarda 1 segundo antes de coletar novamente
     time.sleep(1)
 
-# Imprime o tempo de execução total
-fim = time.time()
-tempo_total_execucao = fim - inicio
-print(f"Tempo de execução total: {tempo_total_execucao} segundos")
+
 
 # Imprime a utilização da CPU de cada processo
 for processo in processos_iniciais:

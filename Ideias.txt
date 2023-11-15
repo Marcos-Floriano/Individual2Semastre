@@ -7,23 +7,17 @@ Monitorar o processador das máquinas é crucial para garantir que o software CB
 Além disso, ao realizar o monitoramento regular do processador, é possível tomar medidas proativas para evitar falhas no sistema, garantindo a segurança dos passageiros e a continuidade das operações do metrô de forma eficiente. O monitoramento contínuo do processador também pode ajudar a prever possíveis problemas futuros e a implementar estratégias de manutenção preventiva, o que pode reduzir significativamente o tempo de inatividade e os custos associados a reparos não planejados.
 --------------------------------------------------
 
-que graficos eu posso fazer?
+graficos que vou fazer
 
-Gráfico de Linha de Uso do Processador ao Longo do Tempo:Use os dados do Python para monitorar o uso da CPU ao longo do tempo. Cada ponto no gráfico representaria uma amostra de dados coletados em intervalos regulares.
 
 Gráfico de Barras de Utilização de CPU por Processo:Utilize os dados do Python para criar um gráfico de barras que mostra a utilização da CPU por processo. Cada barra representa um processo específico.
 
 Gráfico de Pizza para Distribuição da Utilização do Disco por Processo:Aproveite os dados do Python para criar um gráfico de pizza que ilustra a distribuição da utilização do disco entre diferentes processos.
 
-Gráfico de Área de Uso de Memória ao Longo do Tempo:Use os dados do Python para criar um gráfico de área que representa as variações no uso de memória ao longo do tempo.
-
 Gráfico de Barras Empilhadas para Distribuição da Utilização da CPU por Tipo de Processo:Combine os dados de distribuição de CPU por tipo de processo do Python com as informações do Kotlin para criar um gráfico de barras empilhadas que mostra a utilização da CPU dividida em diferentes tipos de processos.
 
 Gráfico de Linha para Frequência do Processador ao Longo do Tempo:Se o código Kotlin coletar dados de frequência do processador, você pode criar um gráfico de linha que mostra como a frequência do processador varia ao longo do tempo.
 
-Gráfico de Rosca para Distribuição de Fabricantes de Processadores:Use os dados do Kotlin para criar um gráfico de rosca que mostra a distribuição de fabricantes de processadores no sistema.
-
-Gráfico de Barras para Número de Núcleos Físicos e Lógicos:Utilize as informações do Kotlin para criar um gráfico de barras que compara o número de núcleos físicos e lógicos do processador.
 ------------------------------------------------------
 No que esses graficos ajudam
 
