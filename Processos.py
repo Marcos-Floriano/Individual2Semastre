@@ -30,14 +30,9 @@ while time.time() - inicio < tempo_total:
         distribuicao_cpu[info['name']] = info['cpu_percent']
     distribuicao_cpu_data.append((datetime.now(), distribuicao_cpu))
 
-    # Obtém informações sobre o uso de memória
-    uso_memoria = psutil.virtual_memory().percent
-    uso_memoria_data.append((datetime.now(), uso_memoria))
 
     # Aguarda 1 segundo antes de coletar novamente
     time.sleep(1)
-
-
 
 # Imprime a utilização da CPU de cada processo
 for processo in processos_iniciais:
