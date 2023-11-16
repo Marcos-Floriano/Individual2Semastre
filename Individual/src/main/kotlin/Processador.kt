@@ -11,9 +11,6 @@ fun main() {
     var Frequencia = Processador.frequencia
     var Identificador = Processador.identificador
     var Microarquitetura = Processador.microarquitetura
-    var CpusFisicas = Processador.numeroCpusFisicas
-    var CpusLogicas = Processador.numeroCpusLogicas
-    var PacotesFisicos = Processador.numeroPacotesFisicos
     var Uso = Processador.uso
 
 
@@ -24,9 +21,6 @@ fun main() {
             Frequencia: $Frequencia 
             Identificador: $Identificador 
             Microarquitetura: $Microarquitetura 
-            CpusFisicas: $CpusFisicas 
-            CpusLogicas: $CpusLogicas 
-            PacotesFisicos: $PacotesFisicos 
             Uso: $Uso 
         """.trimIndent())
 
