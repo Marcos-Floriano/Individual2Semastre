@@ -53,8 +53,9 @@ for registro in uso_disco_data:
     
     if cursor.execute(comando_sql, valores):
         conexao.commit()
+         print("Dados de uso_disco_data inseridos com sucesso na tabela processos")
     else:
-        print("Falha ao inserir dados na processos")
+        print("Falha ao inserir dados de uso_disco_data na tabela processos")
 
 # Inserção dos dados no MySQL - Distribuição CPU
 for registro in distribuicao_cpu_data:
@@ -64,8 +65,9 @@ for registro in distribuicao_cpu_data:
     
     if cursor.execute(comando_sql, valores):
         conexao.commit()
+        print("Dados de distribuicao_cpu_data inseridos com sucesso na tabela processos")
     else:
-        print("Falha ao inserir dados na processos")
+        print("Falha ao inserir dados de distribuicao_cpu_data na tabela processos")
 
 # Fecha a conexão com o banco de dados
 conexao.close()
