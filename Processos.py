@@ -1,6 +1,18 @@
 import time
 import psutil
+import mysql.connector
 from datetime import datetime
+
+# Configuração da conexão com o MySQL
+conexao = mysql.connector.connect(
+    host='localhost',
+    user='aluno',
+    password='sptech',
+    database='nocline'
+)
+
+# Cria um objeto de cursor para executar comandos SQL
+cursor = conexao.cursor()
 
 # Lista para armazenar dados do uso de disco
 uso_disco_data = []
@@ -9,7 +21,7 @@ uso_disco_data = []
 distribuicao_cpu_data = []
 
 # Tempo total de execução (em segundos)
-tempo_total = 1
+tempo_total = 10  # Ajuste conforme necessário
 
 # Obtém a lista de processos no início
 processos_iniciais = psutil.process_iter()
@@ -30,9 +42,33 @@ while time.time() - inicio < tempo_total:
         distribuicao_cpu[info['name']] = info['cpu_percent']
     distribuicao_cpu_data.append((datetime.now(), distribuicao_cpu))
 
-
     # Aguarda 1 segundo antes de coletar novamente
     time.sleep(1)
+
+# Inserção dos dados no MySQL - Uso de Disco
+for registro in uso_disco_data:
+    data, percentagem = registro
+    comando_sql = "INSERT INTO processos (data, percentagem) VALUES (%s, %s)"
+    valores = (data, percentagem)
+    
+    if cursor.execute(comando_sql, valores):
+        conexao.commit()
+    else:
+        print("Falha ao inserir dados na processos")
+
+# Inserção dos dados no MySQL - Distribuição CPU
+for registro in distribuicao_cpu_data:
+    data, distribuicao = registro
+    comando_sql = "INSERT INTO processos (data, processo1, processo2, ...) VALUES (%s, %s, %s, ...)"
+    valores = (data, distribuicao.get('processo1', 0), distribuicao.get('processo2', 0), ...)
+    
+    if cursor.execute(comando_sql, valores):
+        conexao.commit()
+    else:
+        print("Falha ao inserir dados na processos")
+
+# Fecha a conexão com o banco de dados
+conexao.close()
 
 # Imprime a utilização da CPU de cada processo
 for processo in processos_iniciais:
